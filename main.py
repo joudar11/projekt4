@@ -73,7 +73,7 @@ def odstranit_ukol():
     except:
         print("Chyba")
     
-print("")
+    print("")
 
 
         hlavni_menu()
