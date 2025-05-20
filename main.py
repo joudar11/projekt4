@@ -2,8 +2,8 @@ ukoly = []
 
 def hlavni_menu():
     print(ukoly)
-    select = 0
-    while select != 4:
+    select = int()
+    while True:
         print("Správce úkolů - Hlavní menu")
         print("1. Přidat úkol")
         print("2. Zobrazit všechny úkoly")
@@ -44,6 +44,7 @@ def pridat_ukol():
     ukoly.append([name, description])
     print("")
 
+
     hlavni_menu()
 
 
@@ -54,6 +55,7 @@ def zobrazit_ukoly():
         print(f"{i}. {ukol[0]} - {ukol[1]}")
         i += 1
     print("")
+
 
     hlavni_menu()
 
