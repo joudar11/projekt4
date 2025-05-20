@@ -10,6 +10,7 @@ def hlavni_menu():
         print("3. Odstranit úkol")
         print("4. Konec programu")
         select = input("Vyberte možnost (1-4): ")
+        print("")
         try:
             select = int(select)
         except:
@@ -71,6 +72,8 @@ def odstranit_ukol():
         ukoly.pop(select-1)
     except:
         print("Chyba")
+    
+print("")
 
 
         hlavni_menu()
