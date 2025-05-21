@@ -15,7 +15,9 @@ def hlavni_menu():
         print("4. Konec programu")
         select = input("Vyberte možnost (1-4): ")
         print("")
-        if select == "":
+
+
+        if not select:
             print("Vstup nesmí být prázdný")
             print("")
             continue
@@ -25,12 +27,11 @@ def hlavni_menu():
             print("Chyba - neplatný vstup. Vstup musí být celé číslo v rozsahu od 1 do 4.")
             print("")
             continue
-        if not isinstance(select, int):
-            print("Výběr musí být číslo")
-            print("")
-        elif not select in range(1, 5):
+        if not select in range(1, 5):
             print("Vyběr musí být v rozsahu 1-4")
             print("")
+        
+        
         else:
             if select == 4:
                 print("Konec programu.")
