@@ -1,0 +1,1 @@
+python D:\Documents\PYTHON\projekt4\main.py

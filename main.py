@@ -1,7 +1,6 @@
 ukoly = []
 
 def hlavni_menu():
-    print(ukoly)
     select = int()
     while True:
         print("Správce úkolů - Hlavní menu")
