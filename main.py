@@ -33,15 +33,14 @@ def hlavni_menu():
 
 
 def pridat_ukol():
-    loop = 1
-    while loop == 1: 
+    while True: 
         name = input("Zadejte název úkolu: ")
         description = input("Zadejte popis úkolu: ")
 
-        if name != "" or description != "":
-            loop = 0
+        if name == "" or description == "":
+            print("Název ani popis nesmí být prázdný!")
         else:
-            print("Název ani popis nesmí být prýzdný!")
+            break
     ukoly.append([name, description])
     print("")
 
@@ -51,10 +50,13 @@ def pridat_ukol():
 
 def zobrazit_ukoly():
     print("Seznam úkolů: ")
-    i = 1
-    for ukol in ukoly:
-        print(f"{i}. {ukol[0]} - {ukol[1]}")
-        i += 1
+    if len(ukoly) == 0:
+        print("Seznam je prázdný.")
+    else:
+        i = 1
+        for ukol in ukoly:
+            print(f"{i}. {ukol[0]} - {ukol[1]}")
+            i += 1
     print("")
 
 
@@ -72,11 +74,10 @@ def odstranit_ukol():
         ukoly.pop(select-1)
     except:
         print("Chyba")
-    
     print("")
 
 
-        hlavni_menu()
+    hlavni_menu()
 
 
 def run():
