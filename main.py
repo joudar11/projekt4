@@ -70,6 +70,7 @@ def odstranit_ukol():
     except:
         print("Chyba")
         quit()
+
     try:
         ukoly.pop(select-1)
     except:
