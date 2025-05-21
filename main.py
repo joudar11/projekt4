@@ -11,11 +11,14 @@ def hlavni_menu():
         print("4. Konec programu")
         select = input("Vyberte možnost (1-4): ")
         print("")
+        if select == "":
+            print("Vstup nesmí být prázdný")
+            continue
         try:
             select = int(select)
         except:
             print("Chyba")
-            quit()
+            continue
         if not isinstance(select, int):
             print("Výběr musí být číslo")
         elif not select in range(1, 5):
