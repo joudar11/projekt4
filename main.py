@@ -1,5 +1,12 @@
 ukoly = []
 
+# i = 1
+# for _ in range (1,101):
+#     jmeno = f"Název {i}"
+#     description = f"Popisek {i}"
+#     ukoly.append([jmeno, description])
+#     i += 1
+
 def hlavni_menu():
     select = int()
     while True:
@@ -12,16 +19,20 @@ def hlavni_menu():
         print("")
         if select == "":
             print("Vstup nesmí být prázdný")
+            print("")
             continue
         try:
             select = int(select)
         except:
             print("Chyba - neplatný vstup. Vstup musí být celé číslo v rozsahu od 1 do 4.")
+            print("")
             continue
         if not isinstance(select, int):
             print("Výběr musí být číslo")
+            print("")
         elif not select in range(1, 5):
             print("Vyběr musí být v rozsahu 1-4")
+            print("")
         else:
             if select == 4:
                 print("Konec programu.")
@@ -52,7 +63,7 @@ def pridat_ukol():
 
 def zobrazit_ukoly():
     print("Seznam úkolů: ")
-    if len(ukoly) == 0:
+    if not ukoly:
         print("Seznam je prázdný.")
     else:
         i = 1
@@ -60,32 +71,38 @@ def zobrazit_ukoly():
             print(f"{i}. {ukol[0]} - {ukol[1]}")
             i += 1
     print("")
-
-
     hlavni_menu()
 
 
 def odstranit_ukol():
+    if not ukoly:
+        print("Seznam úkolů je prázdný.")
+        print("")
+        hlavni_menu()
     select = input("Zdaejte číslo úkolu, který chcete odstranit: ")
     try:
         select = int(select)
     except:
-        print("Chyba")
-        quit()
+        print("Chyba - je třeba zadat celé číslo")
+        hlavni_menu()
 
-    try:
-        ukoly.pop(select-1)
-    except:
-        print("Chyba")
-    print("")
-
-
-    hlavni_menu()
-
-
-def run():
-    hlavni_menu()
+    if select > len(ukoly):
+        print("Tolik úkolů v seznamu není!")
+        print("")
+        hlavni_menu()
+    elif select < 1:
+        print("Neplatné pořadí úkolu!")
+        print("")
+        hlavni_menu()
+    else:
+        try:
+            ukoly.pop(select-1)
+            print(f"Úkol {select} úspěšně odstraněn.")
+        except:
+            print("Chyba")
+        print("")
+        hlavni_menu()
 
 
 if __name__ == "__main__":
-    run()
+    hlavni_menu()
