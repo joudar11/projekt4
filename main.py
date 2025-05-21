@@ -54,10 +54,10 @@ def pridat_ukol():
         else:
             break
     ukoly.append([name, description])
+
+
     print("Úkol úspěšně uložen.")
-
     print("")
-
     hlavni_menu()
 
 
@@ -92,6 +92,7 @@ def odstranit_ukol():
         select = int(select)
     except:
         print("Chyba - je třeba zadat celé číslo")
+        print("")
         hlavni_menu()
 
     if select > len(ukoly):
