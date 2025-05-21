@@ -1,11 +1,9 @@
 ukoly = []
 
-# i = 1
-# for _ in range (1,101):
+# for i in range (1,101):
 #     jmeno = f"Název {i}"
 #     description = f"Popisek {i}"
 #     ukoly.append([jmeno, description])
-#     i += 1
 
 def hlavni_menu():
     select = int()
@@ -50,22 +48,23 @@ def pridat_ukol():
         name = input("Zadejte název úkolu: ")
         description = input("Zadejte popis úkolu: ")
 
-        if name == "" or description == "":
+        if not name or not description:
             print("Název ani popis nesmí být prázdný!")
         else:
             break
     ukoly.append([name, description])
-    print("")
+    print("Úkol úspěšně uložen.")
 
+    print("")
 
     hlavni_menu()
 
 
 def zobrazit_ukoly():
-    print("Seznam úkolů: ")
     if not ukoly:
-        print("Seznam je prázdný.")
+        print("Seznam úkolů je prázdný.")
     else:
+        print("Seznam úkolů: ")
         i = 1
         for ukol in ukoly:
             print(f"{i}. {ukol[0]} - {ukol[1]}")
@@ -79,7 +78,15 @@ def odstranit_ukol():
         print("Seznam úkolů je prázdný.")
         print("")
         hlavni_menu()
-    select = input("Zdaejte číslo úkolu, který chcete odstranit: ")
+    
+    print("Seznam úkolů: ")
+    i = 1
+    for ukol in ukoly:
+        print(f"{i}. {ukol[0]} - {ukol[1]}")
+        i += 1
+    print("")
+
+    select = input("Zadejte číslo úkolu, který chcete odstranit: ")
     try:
         select = int(select)
     except:
