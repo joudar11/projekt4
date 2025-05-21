@@ -17,7 +17,7 @@ def hlavni_menu():
         try:
             select = int(select)
         except:
-            print("Chyba")
+            print("Chyba - neplatný vstup. Vstup musí být celé číslo v rozsahu od 1 do 4.")
             continue
         if not isinstance(select, int):
             print("Výběr musí být číslo")
