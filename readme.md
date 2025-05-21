@@ -1,0 +1,1 @@
+Tabulka s testovacími případy je dostupná na: https://docs.google.com/spreadsheets/d/1wjjP5S033FqRFI1aiHd4uaP31hvZGLu-NiglsMk5tyc/edit?usp=sharing
