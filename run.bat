@@ -1,1 +1,1 @@
-python D:\Documents\PYTHON\projekt4\main.py
+python main.py
