@@ -58,7 +58,7 @@ def pridat_ukol():
 
     print("Úkol úspěšně uložen.")
     print("")
-    hlavni_menu()
+    return
 
 
 def zobrazit_ukoly():
@@ -71,7 +71,7 @@ def zobrazit_ukoly():
             print(f"{i}. {ukol[0]} - {ukol[1]}")
             i += 1
     print("")
-    hlavni_menu()
+    return
 
 
 def odstranit_ukol():
@@ -110,7 +110,7 @@ def odstranit_ukol():
         except:
             print("Chyba")
         print("")
-        hlavni_menu()
+        return
 
 
 if __name__ == "__main__":
