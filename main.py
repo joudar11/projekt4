@@ -35,7 +35,7 @@ def hlavni_menu():
         else:
             if select == 4:
                 print("Konec programu.")
-                quit()
+                break()
             if select == 1:
                 pridat_ukol()
             if select == 2:
